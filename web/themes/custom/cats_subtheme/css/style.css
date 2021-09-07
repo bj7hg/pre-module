@@ -1,0 +1,83 @@
+.navbar {
+  background-color: black;
+}
+.navbar .navbar-unity {
+  display: flex;
+}
+.navbar .navbar-unity .navbar-collapse .region {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.navbar .navbar-unity .navbar-collapse .region .menu--header-menu {
+  display: flex;
+}
+.navbar .navbar-unity .navbar-collapse .region .menu--header-menu a {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 0;
+  margin: 0 15px;
+}
+.navbar .navbar-unity .navbar-collapse .region .menu--header-menu a:hover, .navbar .navbar-unity .navbar-collapse .region .menu--header-menu a:focus, .navbar .navbar-unity .navbar-collapse .region .menu--header-menu a:active {
+  background-color: transparent;
+  border-bottom: 1px solid white;
+}
+
+#main-cats .alert-success {
+  background-color: black;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: white;
+  position: relative;
+  padding: 15px;
+}
+#main-cats .alert-success .close {
+  position: absolute;
+  right: 5px;
+  top: 15px;
+}
+#main-cats .js-quickedit-page-title {
+  text-align: center;
+  font-family: "Sans Regular";
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+}
+#main-cats .subtext {
+  font-size: 18px;
+  text-align: center;
+}
+
+@font-face {
+  font-family: "Sans Semibold";
+  src: url("../fonts/SansPro/sourcesanspro-semibold-webfont.eot");
+  src: url("../fonts/SansPro/sourcesanspro-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/SansPro/sourcesanspro-semibold-webfont.woff2") format("woff2"), url("../fonts/SansPro/sourcesanspro-semibold-webfont.woff") format("woff"), url("../fonts/SansPro/sourcesanspro-semibold-webfont.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sans Regular";
+  src: url("../fonts/SansPro/sourcesanspro-regular-webfont.eot");
+  src: url("../fonts/SansPro/sourcesanspro-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/SansPro/sourcesanspro-regular-webfont.woff2") format("woff2"), url("../fonts/SansPro/sourcesanspro-regular-webfont.woff") format("woff"), url("../fonts/SansPro/sourcesanspro-regular-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sans Light";
+  src: url("../fonts/SansPro/sourcesanspro-light-webfont.eot");
+  src: url("../fonts/SansPro/sourcesanspro-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/SansPro/sourcesanspro-light-webfont.woff2") format("woff2"), url("../fonts/SansPro/sourcesanspro-light-webfont.woff") format("woff"), url("../fonts/SansPro/sourcesanspro-light-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sans Bold";
+  src: url("../fonts/SansPro/sourcesanspro-bold-webfont.eot");
+  src: url("../fonts/SansPro/sourcesanspro-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/SansPro/sourcesanspro-bold-webfont.woff2") format("woff2"), url("../fonts/SansPro/sourcesanspro-bold-webfont.woff") format("woff"), url("../fonts/SansPro/sourcesanspro-bold-webfont.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+.dialog-off-canvas-main-canvas {
+  font-family: "Sans Regular";
+}
+/*# sourceMappingURL=style.css.map */

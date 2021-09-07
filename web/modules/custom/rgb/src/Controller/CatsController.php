@@ -17,11 +17,12 @@ class CatsController {
 * @return array
 *   A simple renderable array.
 */
-public function content() {
-  $element = [
-    '#markup' => 'Hello! You can add here a photo of your cat.',
-  ];
-return $element;
-}
+    public function content ()
+      {
+      $element = [
+        '#theme' => 'cats-theme'
+        ];
+        return $element;
+  }
 
 }
