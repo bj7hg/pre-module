@@ -9,7 +9,8 @@ namespace Drupal\rgb\Controller;
 /**
 * Provides route responses for the rgb module.
 */
-class CatsController {
+class CatsController
+{
 
 /**
 * Returns a simple page.
@@ -17,12 +18,12 @@ class CatsController {
 * @return array
 *   A simple renderable array.
 */
-    public function content (){
-      $form = \Drupal::formBuilder()->getForm('\Drupal\rgb\Form\CatForm');
+    public function content()
+    {
+        $form = \Drupal::formBuilder()->getForm('\Drupal\rgb\Form\CatForm');
         return [
           '#theme' => 'cats-theme',
           '#form'=> $form,
         ];
-  }
-
+    }
 }

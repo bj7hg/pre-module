@@ -5,11 +5,11 @@
  */
 function rgb_theme($existing, $type, $theme, $path)
 {
-  return [
-    "cats-theme"=>[
+    return [
+      "cats-theme"=>[
       "variables"=>[
         'form' => [],
+        ]
       ]
-    ]
-  ];
+    ];
 }

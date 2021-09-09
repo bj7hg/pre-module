@@ -25,7 +25,8 @@ class CatForm extends FormBase
         $form['name'] = [
           '#type' => 'textfield',
           '#title' => $this->t('Your cat’s name:'),
-          '#placeholder' => $this->t('Your name have to contain from 2 to 32 symbols')
+          '#placeholder' => $this->t('Your name have to contain from 2 to 32 symbols'),
+          '#required' => true,
         ];
 
         $form['actions']['#type'] = 'actions';
