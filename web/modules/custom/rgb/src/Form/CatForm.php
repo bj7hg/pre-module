@@ -36,7 +36,14 @@ class CatForm extends FormBase
         ];
         return $form;
     }
-
+    public function validateForm(array &$form, FormStateInterface $form_state)
+    {
+        if (strlen($form_state->getValue('name')) < 2) {
+            $form_state->setErrorByName('name', $this->t('Name is too short.'));
+        } elseif (strlen($form_state->getValue('name')) >32) {
+            $form_state->setErrorByName('name', $this->t('Name is too long.'));
+        }
+    }
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
     }
