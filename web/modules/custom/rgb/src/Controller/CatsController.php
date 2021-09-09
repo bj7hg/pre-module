@@ -17,12 +17,12 @@ class CatsController {
 * @return array
 *   A simple renderable array.
 */
-    public function content ()
-      {
-      $element = [
-        '#theme' => 'cats-theme'
+    public function content (){
+      $form = \Drupal::formBuilder()->getForm('\Drupal\rgb\Form\catForm');
+        return [
+          '#theme' => 'cats-theme',
+          '#form'=> $form,
         ];
-        return $element;
   }
 
 }
