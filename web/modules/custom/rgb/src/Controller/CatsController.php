@@ -18,7 +18,7 @@ class CatsController {
 *   A simple renderable array.
 */
     public function content (){
-      $form = \Drupal::formBuilder()->getForm('\Drupal\rgb\Form\catForm');
+      $form = \Drupal::formBuilder()->getForm('\Drupal\rgb\Form\CatForm');
         return [
           '#theme' => 'cats-theme',
           '#form'=> $form,
