@@ -23,4 +23,4 @@
 # Ignore .env files as they are personal
 /.env
 /.docksal
-/web/themes/**/node-modules
+/web/**/node-modules

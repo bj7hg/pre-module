@@ -47,5 +47,6 @@ class CatForm extends FormBase
     }
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
+        \Drupal::messenger()->addMessage("You adedd a cat!");
     }
 }
