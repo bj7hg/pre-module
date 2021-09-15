@@ -7,6 +7,8 @@
 
 namespace Drupal\rgb\Form;
 
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\MessageCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -34,6 +36,9 @@ class CatForm extends FormBase
           '#type' => 'submit',
           '#value' => $this->t('Add cat'),
           '#button_type' => 'primary',
+          '#ajax' => [
+            'callback' => '::setMessage',
+          ],
         ];
         return $form;
     }
@@ -47,6 +52,18 @@ class CatForm extends FormBase
     }
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
-        \Drupal::messenger()->addMessage("You adedd a cat!");
+    }
+    public function setMessage(array $form, FormStateInterface $form_state)
+    {
+        $response = new AjaxResponse();
+        if ($form_state->hasAnyErrors()) {
+            foreach ($form_state->getErrors() as $errors_array) {
+                $response->addCommand(new MessageCommand($errors_array));
+            }
+        } else {
+              $response->addCommand(new MessageCommand('You adedd a cat!'));
+        }
+        \Drupal::messenger()->deleteAll();
+        return $response;
     }
 }
