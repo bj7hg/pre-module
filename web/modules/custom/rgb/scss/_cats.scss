@@ -35,6 +35,7 @@
     font-size: 18px;
     text-align: center;
   }
+  #cat-form{
   .form-item {
     display: flex;
     flex-direction: column;
@@ -44,6 +45,15 @@
     }
     #edit-name {
       width: 400px;
+    }
+  }
+  .form-item-email{
+    #edit-email {
+      width: 400px;
+    }
+
+    .input-group-addon {
+      display: none;
     }
   }
   #edit-actions{
@@ -60,4 +70,8 @@
       }
     }
   }
+  }
+}
+.null{
+  display: none;
 }

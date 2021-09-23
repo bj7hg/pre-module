@@ -62,29 +62,39 @@
   font-size: 18px;
   text-align: center;
 }
-.region-content .form-item {
+.region-content #cat-form .form-item {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.region-content .form-item .control-label {
+.region-content #cat-form .form-item .control-label {
   font-size: 16px;
 }
-.region-content .form-item #edit-name {
+.region-content #cat-form .form-item #edit-name {
   width: 400px;
 }
-.region-content #edit-actions {
+.region-content #cat-form .form-item-email #edit-email {
+  width: 400px;
+}
+.region-content #cat-form .form-item-email .input-group-addon {
+  display: none;
+}
+.region-content #cat-form #edit-actions {
   display: flex;
   justify-content: center;
 }
-.region-content #edit-actions #edit-submit {
+.region-content #cat-form #edit-actions #edit-submit {
   margin: 0;
   background-color: black;
   color: white;
   transition: all 0.3s;
 }
-.region-content #edit-actions #edit-submit:hover {
+.region-content #cat-form #edit-actions #edit-submit:hover {
   background-color: white;
   color: black;
+}
+
+.null {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
