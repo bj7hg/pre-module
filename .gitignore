@@ -24,3 +24,4 @@
 /.env
 /.docksal
 /web/**/node-modules
+/web/**/node_modules
