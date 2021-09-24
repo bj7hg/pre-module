@@ -93,6 +93,10 @@
   background-color: white;
   color: black;
 }
+.region-content #cat-form .form-group .form-managed-file {
+  display: flex;
+  flex-direction: column;
+}
 
 .null {
   display: none;

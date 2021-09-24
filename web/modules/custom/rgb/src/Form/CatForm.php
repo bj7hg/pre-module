@@ -40,6 +40,18 @@ class CatForm extends FormBase
             'event' => 'keyup',
           ],
         ];
+        $form['image'] = [
+          '#title' => 'Image',
+          '#type' => 'managed_file',
+          '#multiple' => false,
+          '#description' => t('Allowed extensions: jpeg, jpg, png'),
+          '#required' => true,
+          '#upload_validators'    => [
+            'file_validate_is_image'      => array(),
+            'file_validate_extensions'    => array('png jpg jpeg'),
+            'file_validate_size'          => array(2097152)
+          ],
+        ];
         $form['actions']['#type'] = 'actions';
         $form['actions']['submit'] = [
           '#type' => 'submit',
@@ -53,20 +65,21 @@ class CatForm extends FormBase
     }
     public function validateForm(array &$form, FormStateInterface $form_state)
     {
-      $email=$form_state->getValue('email');
+        $email=$form_state->getValue('email');
         if (strlen($form_state->getValue('name')) < 2) {
             $form_state->setErrorByName('name', $this->t('Name is too short.'));
         } elseif (strlen($form_state->getValue('name')) >32) {
             $form_state->setErrorByName('name', $this->t('Name is too long.'));
         }
-        if((!filter_var($email, FILTER_VALIDATE_EMAIL)) || ( strpbrk($email, '1234567890+*/!#$^&*()='))){
-          $form_state->setErrorByName('name', $this->t('Invalid Email'));
+        if ((!filter_var($email, FILTER_VALIDATE_EMAIL))
+          || ( strpbrk($email, '1234567890+*/!#$^&*()='))) {
+            $form_state->setErrorByName('name', $this->t('Invalid Email'));
         }
     }
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
     }
-    public function setMessage(array $form, FormStateInterface $form_state)
+    public function setMessage(array $form, FormStateInterface $form_state): AjaxResponse
     {
         $response = new AjaxResponse();
         if ($form_state->hasAnyErrors()) {
@@ -79,14 +92,14 @@ class CatForm extends FormBase
         \Drupal::messenger()->deleteAll();
         return $response;
     }
-    public function emailMessage(array &$form, FormStateInterface $form_state)
+    public function emailMessage(array &$form, FormStateInterface $form_state): AjaxResponse
     {
         $response = new AjaxResponse();
         $email=$form_state->getValue('email');
-        if(strpbrk($email, '1234567890+*/!#$^&*()=')){
+        if (strpbrk($email, '1234567890+*/!#$^&*()=')) {
             $response->addCommand(new MessageCommand('Invalid Email'));
-        } else{
-            $response->addCommand(new MessageCommand('',".null",[],true));
+        } else {
+            $response->addCommand(new MessageCommand('Valid Email'));
         }
         return $response;
     }
