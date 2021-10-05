@@ -44,3 +44,10 @@ function rgb_schema():array
 
     return $schema;
 }
+/**
+ * Implements hook_uninstall().
+ */
+function rgb_uninstall()
+{
+    \Drupal::state()->delete('rgb.rgb');
+}

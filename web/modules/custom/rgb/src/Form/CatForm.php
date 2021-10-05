@@ -11,7 +11,7 @@ use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\MessageCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\file\Entity\File;
 
 class CatForm extends FormBase
 {
@@ -46,11 +46,10 @@ class CatForm extends FormBase
           '#multiple' => false,
           '#description' => t('Allowed extensions: jpeg, jpg, png'),
           '#required' => true,
+          '#upload_location' => 'public://images/',
           '#upload_validators'    => [
-            'file_validate_is_image'      => array(),
             'file_validate_extensions'    => array('png jpg jpeg'),
             'file_validate_size'          => array(2097152),
-            '#upload_location' => 'public://images/',
           ],
         ];
         $form['actions']['#type'] = 'actions';
@@ -77,8 +76,25 @@ class CatForm extends FormBase
             $form_state->setErrorByName('name', $this->t('Invalid Email'));
         }
     }
+  /**
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   * @throws \Exception
+   */
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
+        $picture = $form_state->getValue('image');
+        $file = File::load($picture[0]);
+        $file->setPermanent();
+        $file->save();
+        \Drupal::database()->insert('rgb')
+        ->fields(['name', 'email', 'date', 'image'])
+        ->values([
+          'name' => $form_state->getValue('name'),
+          'email' => $form_state->getValue('email'),
+          'date' => date('d-m-Y H:i:s', strtotime('+3 hour')),
+          'image' => $picture[0],
+        ])
+        ->execute();
     }
     public function setMessage(array $form, FormStateInterface $form_state): AjaxResponse
     {
@@ -104,4 +120,5 @@ class CatForm extends FormBase
         }
         return $response;
     }
+
 }

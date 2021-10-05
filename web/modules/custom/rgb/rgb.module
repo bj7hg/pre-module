@@ -9,6 +9,7 @@ function rgb_theme($existing, $type, $theme, $path)
       "cats-theme"=>[
       "variables"=>[
         'form' => [],
+        'list'=>[],
         ]
       ]
     ];
