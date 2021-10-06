@@ -26,8 +26,8 @@
   font-weight: bold;
   font-style: normal;
 }
-.region-highlighted .alert-danger,
-.region-highlighted .alert-success {
+.dialog-off-canvas-main-canvas .region-highlighted .alert-danger,
+.dialog-off-canvas-main-canvas .region-highlighted .alert-success {
   background-color: black;
   text-align: center;
   font-size: 16px;
@@ -36,13 +36,13 @@
   position: relative;
   padding: 15px;
 }
-.region-highlighted .alert-danger .close,
-.region-highlighted .alert-success .close {
+.dialog-off-canvas-main-canvas .region-highlighted .alert-danger .close,
+.dialog-off-canvas-main-canvas .region-highlighted .alert-success .close {
   position: absolute;
   right: 5px;
   top: 15px;
 }
-.region-highlighted .alert-success {
+.dialog-off-canvas-main-canvas .region-highlighted .alert-success {
   background-color: black;
   text-align: center;
   font-size: 16px;
@@ -51,54 +51,84 @@
   position: relative;
   padding: 15px;
 }
-
-.region-content .js-quickedit-page-title {
+.dialog-off-canvas-main-canvas .region-content .js-quickedit-page-title {
   text-align: center;
-  font-family: "Sans Regular";
+  font-family: "Sans Regular", serif;
   text-transform: uppercase;
   border-bottom: 1px solid black;
 }
-.region-content .subtext {
+.dialog-off-canvas-main-canvas .region-content .subtext {
   font-size: 18px;
   text-align: center;
 }
-.region-content #cat-form .form-item {
+.dialog-off-canvas-main-canvas .region-content #cat-form {
+  margin-bottom: 30px;
+}
+.dialog-off-canvas-main-canvas .region-content #cat-form .form-item {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.region-content #cat-form .form-item .control-label {
+.dialog-off-canvas-main-canvas .region-content #cat-form .form-item .control-label {
   font-size: 16px;
 }
-.region-content #cat-form .form-item #edit-name {
+.dialog-off-canvas-main-canvas .region-content #cat-form .form-item #edit-name {
   width: 400px;
 }
-.region-content #cat-form .form-item-email #edit-email {
+.dialog-off-canvas-main-canvas .region-content #cat-form .form-item-email #edit-email {
   width: 400px;
 }
-.region-content #cat-form .form-item-email .input-group-addon {
+.dialog-off-canvas-main-canvas .region-content #cat-form .form-item-email .input-group-addon {
   display: none;
 }
-.region-content #cat-form #edit-actions {
+.dialog-off-canvas-main-canvas .region-content #cat-form #edit-actions {
   display: flex;
   justify-content: center;
 }
-.region-content #cat-form #edit-actions #edit-submit {
+.dialog-off-canvas-main-canvas .region-content #cat-form #edit-actions #edit-submit {
   margin: 0;
   background-color: black;
   color: white;
   transition: all 0.3s;
 }
-.region-content #cat-form #edit-actions #edit-submit:hover {
+.dialog-off-canvas-main-canvas .region-content #cat-form #edit-actions #edit-submit:hover {
   background-color: white;
   color: black;
 }
-.region-content #cat-form .form-group .form-managed-file {
+.dialog-off-canvas-main-canvas .region-content #cat-form .form-group .form-managed-file {
   display: flex;
   flex-direction: column;
 }
-
-.null {
+.dialog-off-canvas-main-canvas .region-content .table-responsive tr {
+  height: 260px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #000;
+  font-size: 16px;
+}
+.dialog-off-canvas-main-canvas .region-content .table-responsive tr td {
+  border: none;
+  width: 25%;
+}
+.dialog-off-canvas-main-canvas .region-content .table-responsive tr td:last-child {
+  margin-left: auto;
+}
+.dialog-off-canvas-main-canvas .region-content .table-responsive tr td.active-popup {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dialog-off-canvas-main-canvas .region-content .table-responsive tr td.active-popup img {
+  width: 30%;
+}
+.dialog-off-canvas-main-canvas .null {
   display: none;
 }
 /*# sourceMappingURL=style.css.map */

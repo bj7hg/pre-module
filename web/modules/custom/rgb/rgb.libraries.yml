@@ -2,3 +2,5 @@ rgb_libraries:
   css:
     theme:
       css/style.css: {}
+  js:
+      js/popup.js: {}
