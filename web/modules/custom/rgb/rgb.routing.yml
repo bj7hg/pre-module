@@ -5,3 +5,15 @@ cats:
     _title: 'Cats'
   requirements:
     _permission: 'access content'
+
+delete_form:
+  path: '/rgb/delete/{id}'
+  defaults:
+    _form: '\Drupal\rgb\Form\DeleteForm'
+    _title: 'Are you sure?'
+  requirements:
+    _role: 'administrator'
+    _permission: 'administrator'
+
+edit_form:
+  path: '/rgb/edit/{id}'

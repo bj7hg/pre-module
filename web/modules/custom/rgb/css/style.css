@@ -51,7 +51,7 @@
   position: relative;
   padding: 15px;
 }
-.dialog-off-canvas-main-canvas .region-content .js-quickedit-page-title {
+.dialog-off-canvas-main-canvas .region-content .page-header {
   text-align: center;
   font-family: "Sans Regular", serif;
   text-transform: uppercase;
@@ -109,9 +109,18 @@
 .dialog-off-canvas-main-canvas .region-content .table-responsive tr td {
   border: none;
   width: 25%;
+  display: flex;
+  justify-content: center;
+}
+.dialog-off-canvas-main-canvas .region-content .table-responsive tr td:nth-child(4) {
+  margin-left: auto;
 }
 .dialog-off-canvas-main-canvas .region-content .table-responsive tr td:last-child {
-  margin-left: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.dialog-off-canvas-main-canvas .region-content .table-responsive tr td:last-child a {
+  color: black;
 }
 .dialog-off-canvas-main-canvas .region-content .table-responsive tr td.active-popup {
   position: fixed;

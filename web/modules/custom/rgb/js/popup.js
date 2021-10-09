@@ -1,5 +1,5 @@
 (function ($) {
-    Drupal.behaviors.formErrorBehavior={
+    Drupal.behaviors.formErrorBehavior = {
         attach: function (context, settings) {
               $('.img-responsive').once('ffdf').click(function (event) {
                 $(this).parent().toggleClass('active-popup');
