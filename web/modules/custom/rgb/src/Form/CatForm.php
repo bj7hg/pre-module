@@ -4,8 +4,10 @@ namespace Drupal\rgb\Form;
 
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\MessageCommand;
+use Drupal\Core\Ajax\RedirectCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\file\Entity\File;
 
 /**
@@ -113,6 +115,9 @@ class CatForm extends FormBase {
       }
     }
     else {
+      $url = Url::fromRoute('cats');
+      $command = new RedirectCommand($url->toString());
+      $response->addCommand($command);
       $response->addCommand(new MessageCommand('You adedd a cat!'));
     }
     \Drupal::messenger()->deleteAll();

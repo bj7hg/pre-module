@@ -1,16 +1,19 @@
 <?php
 
 /**
+ * @file
+ */
+
+/**
  * Implements hook_theme().
  */
-function rgb_theme($existing, $type, $theme, $path)
-{
-    return [
-      "cats-theme"=>[
-      "variables"=>[
+function rgb_theme($existing, $type, $theme, $path) {
+  return [
+    "cats-theme" => [
+      "variables" => [
         'form' => [],
-        'list'=>[],
-        ]
-      ]
-    ];
+        'list' => [],
+      ],
+    ],
+  ];
 }

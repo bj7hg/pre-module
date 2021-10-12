@@ -17,3 +17,9 @@ delete_form:
 
 edit_form:
   path: '/rgb/edit/{id}'
+  defaults:
+    _form: '\Drupal\rgb\Form\EditForm'
+    _title: 'Edit Cat'
+  requirements:
+    _role: 'administrator'
+    _permission: 'administrator'
