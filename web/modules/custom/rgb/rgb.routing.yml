@@ -23,3 +23,20 @@ edit_form:
   requirements:
     _role: 'administrator'
     _permission: 'administrator'
+
+admin_menu:
+  path: '/admin/structure/cats'
+  defaults:
+    _title: 'Cats'
+    _form: '\Drupal\rgb\Form\AdminCat'
+  requirements:
+    _permission: 'administer site configuration'
+
+delete_admin:
+  path: '/rgb/admin/delete-cat/{id}'
+  defaults:
+    _form: '\Drupal\rgb\Form\AdminDelete'
+    _title: 'Are you sure?'
+  requirements:
+    _role: 'administrator'
+    _permission: 'administrator'

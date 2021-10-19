@@ -1,0 +1,4 @@
+cats:
+  title: 'Cats'
+  parent: system.admin_structure
+  route_name: admin_menu
